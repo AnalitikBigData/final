@@ -4,7 +4,6 @@ const modalCall = () => {
     const button = document.querySelector('.callback-btn.fancyboxModal.hidden-xs');
     const buttonClose = document.querySelector('.modal-close');
 
-    console.log(buttonClose)
     //<a href="#callback" class="callback-btn fancyboxModal hidden-xs">Заказать звонок</a>
     button.addEventListener('click', (e) => {
         modal.style.display='block';
