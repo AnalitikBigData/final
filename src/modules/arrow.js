@@ -1,23 +1,20 @@
 const arrow = () => {
     const arrowUp = document.querySelector('.up');
-    /*item.addEventListener('click', (e) => {
+    arrowUp.onclick = (e) => {
         e.preventDefault();
-        const blockID = item.getAttribute('href').substring(1)
-        document.getElementById(blockID).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
-    })*/
-    arrowUp.addEventListener('click', (e) => {
-        e.preventDefault();
-        console.log('+')
         const ScrollUp = () => {
             let  scroll, interval;
-            scroll = document.body.scrollTop||window.pageYOffset;
-            interval =setInterval(function(){if(scroll>0)window.scroll(0,scroll-=5);else clearInterval(interval)},5);
+            scroll = document.body.scrollTop|| window.pageYOffset;
+            interval = setInterval(()=>{
+                if ( scroll > 0 ) window.scroll(0, scroll-=5);
+                else clearInterval(interval)
+            }, 5);
         }
         ScrollUp()
-    })
+    };
+    window.addEventListener('scroll', function() {
+        arrowUp.hidden = (pageYOffset < document.documentElement.clientHeight);
+    });
 }
 
 export default arrow
