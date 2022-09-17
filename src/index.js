@@ -5,6 +5,7 @@ import call from './modules/modalCall';
 import arrow from './modules/arrow';
 import sendData from './modules/sendData'
 import inputData from './modules/inputData'
+import accordeon from './modules/accordуon'
 
 modal();
 container();
@@ -13,3 +14,4 @@ call();
 arrow();
 inputData();
 sendData();
+accordeon();
