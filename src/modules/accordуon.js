@@ -5,59 +5,38 @@ const chavo = () => {
     const content = accordeon.querySelectorAll('.element-content')
     content.forEach(item => {
         item.style.display = 'none';
+        active.querySelector('.title').style.background = 'green'
     })
 
-    /*allElems.forEach((elem)=>{
-        elem.addEventListener('click', function(){
-            //находим все активные элементы
-            let descActive = document.querySelectorAll('.type_3 .descElem.active');
-            //прогоняем через цикл и удаляем класс active
-            descActive.forEach((elem)=>{
-                elem.classList.remove('active');
-            })
-    
-            let parentElem = this.parentNode;
-    
-            let contentBlock = parentElem.querySelector('.descElem')
-    
-            if(contentBlock.classList.contains("active")) {
-                contentBlock.classList.remove('active');
-            }
-            else {
-                contentBlock.classList.add('active');
-            }
-        })
-    })*/
     elementAccordeon.forEach(element => {
         element.addEventListener('click', () => {
-            const activa = () => {
-                let elementActive = document.querySelectorAll('.element.active');
-                elementActive.forEach(active=>{
-                    console.log('+');
-                    console.log(active)
-                    active.classList.remove('active');
-                    element.querySelector('.element-content').style.display = 'none';
-                //console.log(active)
-                })
-            }
-            activa();
-            
+            let elementActive = document.querySelectorAll('.element.active');
+            elementActive.forEach(active=>{
+                active.querySelector('.title').style.background = 'green'
+                console.log(active.querySelector('.element-content.active'))
+                if(active.querySelector('.element-content.active') !== null){
+                    active.querySelector('.element-content.active').style.display = 'none'
+                }
+                //active.querySelector('.element-content.active').style.display = 'none'
+                active.classList.remove('active');
+            })
     
             let contentBlock = element.querySelector('.element-content')
     
             if(contentBlock.classList.contains("active")) {
-                console.log(contentBlock)
-                activa();
-                contentBlock.classList.remove('active');
                 contentBlock.style.display = 'none'
-                element.querySelector('.title').style.background = 'white'
+                element.querySelector('.title').style.background = 'green'
+                //element.querySelector('.title').textContent.color = 'black'
+                contentBlock.classList.remove('active');
+                //contentBlock.style.display = 'none'
+                //element.querySelector('.title').style.background = 'white'
             }
             else {
+                element.classList.add('active');
                 contentBlock.classList.add('active');
-                contentBlock.style.display = 'block'
-                element.querySelector('.title').style.background = 'orange'
+                contentBlock.style.display = 'block';
+                element.querySelector('.title').style.background = 'orange';
             }
-            activa();
         })
     })
 }
