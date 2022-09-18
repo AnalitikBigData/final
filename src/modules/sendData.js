@@ -1,7 +1,6 @@
 const sendForm = () => {
     const form = document.querySelector('.rf>form');
     const btn = document.querySelector('.button.btn.feedback')
-    console.log(btn)
 
     const statusBlock = document.createElement("div");
     const loadText = 'Идёт отправка...';
