@@ -47,9 +47,8 @@ const sendForm = () => {
                 setTimeout(() => {
                     statusBlock.textContent = '';
                 }, 3000)
-                formElement.forEach (input => {
-                    input.value = '';
-                })
+                formElement[0].value = '';
+                formElement[1].value = '';
             })
         }
         else {
@@ -66,6 +65,10 @@ const sendForm = () => {
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             submitForm();
+            //<input type="submit" class="button btn feedback" value="Отправить">
+            const btnSend = document.querySelector('.button.btn.feedback')
+            console.log(btnSend)
+            console.log(btn.value)
         })
         
     } catch (err) {

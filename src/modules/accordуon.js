@@ -5,14 +5,14 @@ const chavo = () => {
     const content = accordeon.querySelectorAll('.element-content')
     content.forEach(item => {
         item.style.display = 'none';
-        active.querySelector('.title').style.background = 'green'
+        active.querySelector('.title').style.background = ''
     })
 
     elementAccordeon.forEach(element => {
         element.addEventListener('click', () => {
             let elementActive = document.querySelectorAll('.element.active');
             elementActive.forEach(active=>{
-                active.querySelector('.title').style.background = 'green'
+                active.querySelector('.title').style.background = ''
                 console.log(active.querySelector('.element-content.active'))
                 if(active.querySelector('.element-content.active') !== null){
                     active.querySelector('.element-content.active').style.display = 'none'
@@ -25,7 +25,7 @@ const chavo = () => {
     
             if(contentBlock.classList.contains("active")) {
                 contentBlock.style.display = 'none'
-                element.querySelector('.title').style.background = 'green'
+                element.querySelector('.title').style.background = ''
                 //element.querySelector('.title').textContent.color = 'black'
                 contentBlock.classList.remove('active');
                 //contentBlock.style.display = 'none'

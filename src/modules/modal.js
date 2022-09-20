@@ -14,6 +14,11 @@ const modalCall = () => {
         modal.style.display='none';
         modalOverlay.style.display = 'none';
     })
+
+    modalOverlay.addEventListener('click', (e) => {
+        modal.style.display='none';
+        modalOverlay.style.display = 'none';
+    })
         
 }
 
